@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from flask_debugtoolbar import DebugToolbarExtension
 
-from stories import silly_story
+from stories import story_dict
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "secret"
@@ -11,13 +11,22 @@ debug = DebugToolbarExtension(app)
 @app.get("/")
 def pick_story():
     """ Prompts user to pick a story prompt to use """
+    story_list = story_dict
+
+    return render_template("homepage.html",
+                           story_list=story_list)
 
 
 
-@app.get('/silly_stories')
+
+@app.get('/questions')
 def build_form():
     """ Uses input silly story prompt to render our form """
-    required_words = silly_story.prompts
+    required_words = story_dict.get().prompts
+
+    request.args["stories"]
+
+    #take user click from menu, somehow link it to a story object in story_dict
 
     return render_template("questions.html",
                            word_fields=required_words)

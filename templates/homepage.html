@@ -7,10 +7,25 @@
   <h1 class="pt-4 mb-3 text-center">Choose Your Story Template!</h1>
 
   <div class="ms-3 me-3 dropdown">
-    <button class="dropbtn">Dropdown</button>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
+    <form action="/questions">
+      <select name="stories" id="stories">
+        {% for story in stories %}
+          <option value="{{ story }}">{{ story }}</option>
+        {% endfor %}
+      </select>
+      <button class="btn btn-primary btn-lg w-100">
+        Choose This Story!
+      </button>
+    </form>
   </div>
+
+  {% endblock %}
+<!-- Would key:value be stories=story? -->
+  <!-- <label for="cars">Choose a car:</label>
+
+<select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select> -->

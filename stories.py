@@ -52,5 +52,4 @@ excited_story = Story(
 )
 
 
-
-story_list = [silly_story, excited_story]
+story_dict = {"silly": silly_story, "excited": excited_story}
