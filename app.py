@@ -8,9 +8,15 @@ app.config['SECRET_KEY'] = "secret"
 
 debug = DebugToolbarExtension(app)
 
-@app.get('/')
+@app.get("/")
+def pick_story():
+    """ Prompts user to pick a story prompt to use """
+
+
+
+@app.get('/silly_stories')
 def build_form():
-    """ Uses input story prompt to render our form """
+    """ Uses input silly story prompt to render our form """
     required_words = silly_story.prompts
 
     return render_template("questions.html",

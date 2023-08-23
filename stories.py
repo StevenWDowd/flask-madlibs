@@ -50,3 +50,7 @@ excited_story = Story(
     ["noun", "verb"],
     """OMG!! OMG!! I love to {verb} a {noun}!"""
 )
+
+
+
+story_list = [silly_story, excited_story]
